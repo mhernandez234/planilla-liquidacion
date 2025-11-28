@@ -11,25 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('btn-agrlin').addEventListener('click', () => {
         const nuevaFila = document.createElement('tr');
         nuevaFila.innerHTML = `
-            <td>
-                <select name="item" class="item">
-                    <option value="novillo">Novillo</option>
-                    <option value="ternero">Ternero</option>
-                    <option value="vaca">Vaca</option>
-                </select>
-            </td>
-            <td>
-                <input type="number" class="cant">
-            </td>
-            <td>
-                Kg
-                <input type="number" class="peso" step="0.01">
-            </td>
-            <td>
-                U$D
-                <input type="number" class="precio" step="0.01">
-            </td>
-        `;
+                    <td data-label="Animal">
+                        <select name="item" class="item">
+                            <option value="novillo">Novillo</option>
+                            <option value="ternero">Ternero</option>
+                            <option value="vaca">Vaca</option>
+                        </select>
+                    </td>
+
+                    <td data-label="Cantidad">
+                        <input type="number" class="cant">
+                    </td>
+
+                    <td data-label="Peso" class="prepend-cell">
+                        <span>Kg</span>
+                        <input type="number" class="peso" step="0.01">
+                    </td>
+
+                    <td data-label="Precio" class="prepend-cell">
+                        <span>U$D</span>
+                        <input type="number" class="precio" step="0.01">
+                    </td>
+                    `;
         grilla.appendChild(nuevaFila);
     });
 
