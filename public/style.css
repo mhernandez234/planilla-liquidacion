@@ -1,0 +1,184 @@
+/* -----------------------------------
+   RESET
+----------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
+body {
+    background: #efefef;
+    padding: 20px;
+}
+
+/* -----------------------------------
+   CONTENEDOR
+----------------------------------- */
+form#form-rep {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #0002;
+}
+
+/* -----------------------------------
+   TITULO
+----------------------------------- */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* -----------------------------------
+   FILAS DEL FORM
+----------------------------------- */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.small-group {
+    flex: 0.3;
+}
+
+.big-group {
+    flex: 1.5;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #444;
+    display: block;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* -----------------------------------
+   TABLA
+----------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead th {
+    background: #444;
+    color: #fff;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Inputs dentro de celdas */
+table select,
+table input {
+    width: 100%;
+}
+
+/* -----------------------------------
+   PESO & PRECIO — alineados en fila
+----------------------------------- */
+
+
+.prepend-cell span {
+    white-space: nowrap;
+    font-weight: bold;
+    color: #333;
+}
+
+.prepend-cell input {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+}
+
+/* -----------------------------------
+   BOTÓN "+"
+----------------------------------- */
+#btn-agrlin {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    border-radius: 50%;
+    border: none;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+}
+#btn-agrlin:hover {
+    background: #1e7c32;
+}
+
+/* -----------------------------------
+   BOTÓN GENERAR REPORTE
+----------------------------------- */
+#btn-genrep {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#btn-genrep:hover {
+    background: #0062cc;
+}
+
+/* -----------------------------------
+   RESPONSIVE
+----------------------------------- */
+@media (max-width: 600px) {
+
+    form#form-rep {
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-wrap: wrap;
+    }
+
+    .small-group {
+        flex: 0.5;
+    }
+
+    .big-group {
+        flex: 1;
+    }
+
+    /* Tabla con scroll horizontal */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilla de Facturas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Planilla de Liquidaciones</h1>
+
+    <form action="" id="form-rep">
+
+        <div class="form-row">
+            <div class="form-group small-group">
+                <label for="gen">Género:</label>
+                <select name="gen" id="gen">
+                    <option value="Sr">Sr</option>
+                    <option value="Sra">Sra</option>
+                </select>
+            </div>
+
+            <div class="form-group big-group">
+                <label for="nom">Nombre:</label>
+                <input type="text" id="nom" placeholder="Ingresar Nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="fec">Fecha:</label>
+                <input type="date" id="fec">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="compra">Compra</option>
+                    <option value="venta">Venta</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comision">Comisión:</label>
+                <input type="number" id="comision">
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Animal</th>
+                    <th>Cantidad</th>
+                    <th>Peso</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+
+            <tbody id="grilla">
+                <tr>
+                    <td data-label="Animal">
+                        <select name="item" class="item">
+                            <option value="novillo">Novillo</option>
+                            <option value="ternero">Ternero</option>
+                            <option value="vaca">Vaca</option>
+                        </select>
+                    </td>
+
+                    <td data-label="Cantidad">
+                        <input type="number" class="cant">
+                    </td>
+
+                    <td data-label="Peso" class="prepend-cell">
+                        <span>Kg</span>
+                        <input type="number" class="peso" step="0.01">
+                    </td>
+
+                    <td data-label="Precio" class="prepend-cell">
+                        <span>U$D</span>
+                        <input type="number" class="precio" step="0.01">
+                    </td>
+                </tr>
+            </tbody>
+
+            <tr>
+                <td class="center">
+                    <input type="button" value="+" id="btn-agrlin">
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Generar Reporte" id="btn-genrep">
+
+    </form>
+
+</body>
+<script src="js/genReporte.js"></script>
+</html>
