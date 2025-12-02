@@ -179,10 +179,6 @@ table input {
         width: 60vw;
     }
 
-    #fec {
-        width: 70vw;
-    }
-
     /* Tabla con scroll horizontal */
     table {
         display: block;
