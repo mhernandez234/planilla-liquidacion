@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planilla de Facturas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Planilla de Liquidaciones</h1>
+
+    <form action="" id="form-rep">
+      <p class="section-title">Datos del cliente</p>
+
+      <div class="form-row">
+        <div class="form-group small-group">
+          <label for="gen">Género</label>
+          <select name="gen" id="gen">
+            <option value="Sr">Sr.</option>
+            <option value="Sra">Sra.</option>
+          </select>
+        </div>
+
+        <div class="form-group big-group">
+          <label for="nom">Nombre</label>
+          <input type="text" id="nom" placeholder="Ingresar nombre completo" />
+        </div>
+
+        <div class="form-group">
+          <label for="fec">Fecha</label>
+          <input type="date" id="fec" />
+        </div>
+      </div>
+
+      <hr class="form-divider" />
+      <p class="section-title">Tipo de operación</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select name="tipo" id="tipo">
+            <option value="compra">Compra</option>
+            <option value="venta">Venta</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comision">Comisión (%)</label>
+          <input type="number" id="comision" placeholder="0.00" step="0.01" />
+        </div>
+      </div>
+
+      <hr class="form-divider" />
+      <p class="section-title">Detalle de animales</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Animal</th>
+              <th>Cantidad</th>
+              <th>Peso</th>
+              <th>Precio</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody id="grilla">
+            <tr>
+              <td data-label="Animal">
+                <select name="item" class="item">
+                  <option value="novillos">Novillos</option>
+                  <option value="terneros">Terneros</option>
+                  <option value="vacas">Vacas</option>
+                </select>
+              </td>
+
+              <td data-label="Cantidad">
+                <input type="number" class="cant" placeholder="0" />
+              </td>
+
+              <td data-label="Peso" class="prepend-cell">
+                <div class="cell-inner">
+                  <span>Kg</span>
+                  <input
+                    type="number"
+                    class="peso"
+                    step="0.01"
+                    placeholder="0.00"
+                  />
+                </div>
+              </td>
+
+              <td data-label="Precio" class="prepend-cell">
+                <div class="cell-inner">
+                  <span>U$D</span>
+                  <input
+                    type="number"
+                    class="precio"
+                    step="0.01"
+                    placeholder="0.00"
+                  />
+                </div>
+              </td>
+
+              <td class="center">
+                <button
+                  type="button"
+                  class="btn-eliminar"
+                  disabled
+                  title="No se puede eliminar la única fila"
+                >
+                  −
+                </button>
+              </td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="5">
+                <input type="button" value="＋ Agregar línea" id="btn-agrlin" />
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <input type="submit" value="Generar Reporte" id="btn-genrep" />
+    </form>
+  </body>
+  <script src="js/genReporte.js"></script>
+</html>

@@ -1,0 +1,688 @@
+/* -----------------------------------
+   IMPORTS
+----------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap");
+
+/* -----------------------------------
+   VARIABLES
+----------------------------------- */
+:root {
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --surface-2: #f7f9fb;
+  --border: #dde2e8;
+  --border-focus: #2c5282;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #a0aec0;
+  --accent: #2c5282;
+  --accent-hover: #1a365d;
+  --accent-light: #ebf4ff;
+  --success: #276749;
+  --success-hover: #1c4532;
+  --danger: #c53030;
+  --danger-hover: #9b2c2c;
+  --header-bg: #1a202c;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.09);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+/* -----------------------------------
+   RESET
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-primary);
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+/* -----------------------------------
+   PAGE HEADER
+----------------------------------- */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* -----------------------------------
+   FORM CONTAINER
+----------------------------------- */
+form#form-rep {
+  max-width: 820px;
+  margin: auto;
+  background: var(--surface);
+  padding: 36px 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+/* -----------------------------------
+   SECTION TITLE
+----------------------------------- */
+.section-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* -----------------------------------
+   FORM ROWS
+----------------------------------- */
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-group {
+  flex: 0.3;
+}
+
+.big-group {
+  flex: 1.5;
+}
+
+/* -----------------------------------
+   LABELS
+----------------------------------- */
+label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 7px;
+}
+
+/* -----------------------------------
+   INPUTS & SELECTS
+----------------------------------- */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px 13px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s,
+    background 0.18s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-muted);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--border-focus);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a5568' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* -----------------------------------
+   DIVIDER
+----------------------------------- */
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* -----------------------------------
+   TABLE WRAPPER
+   Contiene la tabla entera con bordes
+   redondeados y sombra
+----------------------------------- */
+.table-wrapper {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin: 4px 0 24px;
+}
+
+/* -----------------------------------
+   TABLE
+----------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* thead fijo — no scrollea */
+thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead th {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 13px 14px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Anchos fijos por columna — se aplican en th Y td para que coincidan
+   ya que thead/tbody/tfoot son bloques independientes */
+thead th:nth-child(1),
+tbody td:nth-child(1) {
+  width: 30%;
+}
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+  width: 16%;
+}
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+  width: 22%;
+}
+thead th:nth-child(4),
+tbody td:nth-child(4) {
+  width: 22%;
+}
+thead th:nth-child(5),
+tbody td:nth-child(5) {
+  width: 52px;
+  text-align: center;
+}
+tfoot td {
+  width: 100%;
+}
+
+/* tbody scrollable — muestra máx 3 filas (~52px c/u) */
+tbody {
+  display: block;
+  max-height: 156px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+tbody::-webkit-scrollbar {
+  width: 5px;
+}
+
+tbody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+tbody::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Cada fila del tbody debe ser display:table
+   para que respete el table-layout:fixed del thead */
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background: var(--surface);
+  transition: background 0.15s;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--surface-2);
+}
+
+tbody tr:hover {
+  background: var(--accent-light);
+}
+
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* tfoot — fila del botón "Agregar línea", fuera del scroll */
+tfoot {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tfoot td {
+  background: var(--surface-2);
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+/* -----------------------------------
+   INPUTS DENTRO DE CELDAS
+----------------------------------- */
+table select,
+table input[type="number"] {
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  width: 100%;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+table select:focus,
+table input[type="number"]:focus {
+  background: var(--surface);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+/* -----------------------------------
+   PESO & PRECIO — con prefijo
+----------------------------------- */
+.prepend-cell .cell-inner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prepend-cell span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  background: var(--border);
+  padding: 5px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.prepend-cell .cell-inner input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* -----------------------------------
+   BOTÓN "+" AGREGAR FILA
+----------------------------------- */
+#btn-agrlin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px 7px 14px;
+  background: var(--success);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    transform 0.12s;
+  width: auto;
+  height: auto;
+}
+
+#btn-agrlin:hover {
+  background: var(--success-hover);
+  transform: translateY(-1px);
+}
+
+/* -----------------------------------
+   BOTÓN "−" ELIMINAR FILA
+----------------------------------- */
+.btn-eliminar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 17px;
+  line-height: 1;
+  border-radius: 50%;
+  border: 1.5px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    transform 0.12s;
+}
+
+.btn-eliminar:hover:not(:disabled) {
+  background: var(--danger);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn-eliminar:disabled {
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* -----------------------------------
+   BOTÓN GENERAR REPORTE
+----------------------------------- */
+#btn-genrep {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    transform 0.12s,
+    box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(44, 82, 130, 0.18);
+}
+
+#btn-genrep:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(44, 82, 130, 0.25);
+}
+
+#btn-genrep:active {
+  transform: translateY(0);
+}
+
+/* -----------------------------------
+   RESPONSIVE — MOBILE
+----------------------------------- */
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  form#form-rep {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
+  /* Campos del formulario: cada uno ocupa su propia línea */
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .small-group,
+  .big-group,
+  .form-group {
+    flex: unset;
+    width: 100%;
+  }
+
+  /* Inputs y selects más grandes para facilitar el toque */
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    padding: 13px 14px;
+    font-size: 1rem;
+  }
+
+  /* -----------------------------------------------
+     GRILLA MOBILE: la tabla se convierte en tarjetas
+     Cada <tr> del tbody se vuelve una card apilada
+  ----------------------------------------------- */
+
+  /* Ocultar el thead — los labels van dentro de cada celda */
+  .table-wrapper thead {
+    display: none;
+  }
+
+  /* Desactivar el display:table del tbody y sus filas */
+  tbody {
+    display: block;
+    max-height: none; /* sin límite de altura — el scroll va en el wrapper */
+    overflow: visible;
+  }
+
+  /* El wrapper limita a ~3 tarjetas (~210px c/u) y scrollea */
+  .table-wrapper {
+    max-height: 390px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  /* Cada fila = tarjeta */
+  tbody tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    padding: 14px;
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  tbody tr:nth-child(odd) {
+    background: var(--surface);
+  }
+
+  tbody tr:nth-child(even) {
+    background: #e8edf3;
+  }
+
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  /* Anular anchos fijos de columnas */
+  tbody td:nth-child(1),
+  tbody td:nth-child(2),
+  tbody td:nth-child(3),
+  tbody td:nth-child(4),
+  tbody td:nth-child(5) {
+    width: auto;
+  }
+
+  /* Fila 1: Animal (col 1) | Cantidad (col 2) */
+  tbody td:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  tbody td:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* Fila 2: Peso (col 1) | Precio (col 2) */
+  tbody td:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  tbody td:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Botón eliminar: fila 3, alineado a la derecha */
+  tbody td:nth-child(5) {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 4px;
+  }
+
+  /* Mostrar el label de cada celda como texto encima del input */
+  tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+  }
+
+  /* La celda del botón eliminar no necesita label */
+  tbody td:nth-child(5)::before {
+    display: none;
+  }
+
+  td {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  /* Inputs dentro de celdas — con borde visible en mobile */
+  table select,
+  table input[type="number"] {
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
+    padding: 11px 12px;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  table select:focus,
+  table input[type="number"]:focus {
+    background: var(--surface);
+    border-color: var(--border-focus);
+  }
+
+  /* Peso y precio: el span-badge y el input se apilan */
+  .prepend-cell .cell-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .prepend-cell span {
+    align-self: flex-start;
+  }
+
+  /* tfoot: botón agregar full width */
+  tfoot {
+    display: block;
+    width: 100%;
+  }
+
+  tfoot tr {
+    display: block;
+    width: 100%;
+  }
+
+  tfoot td {
+    display: block;
+    width: 100%;
+    padding: 14px;
+  }
+
+  #btn-agrlin {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Botón eliminar más grande para facilitar el toque */
+  .btn-eliminar {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  /* Botón generar reporte */
+  #btn-genrep {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}

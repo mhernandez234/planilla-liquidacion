@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsializacion de Reporte</title>
+    <link rel="stylesheet" href="styleRep.css" />
+  </head>
+  <body>
+    <input type="button" id="btn-descargar" value="Descargar PDF" />
+    <a href="index.html" id="btn-atras">Atras</a>
+
+    <div id="cont-reporte">
+      <img src="assets/LogoFactura.png" alt="Logo de la empresa" />
+
+      <ul>
+        <li>Venta de inmuebles rurales.</li>
+        <li>Venta de haciendas en el campo.</li>
+        <li>Embarque de ganado a frigorífico.</li>
+      </ul>
+
+      <p>Melo, <span id="fec-rep"></span></p>
+      <p><span id="gen-rep"></span> <span id="nom-rep"></span></p>
+      <p>Liquidación de su <span id="tipo-rep"></span> de hacienda</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabla-lineas"></tbody>
+
+        <tfoot>
+          <tr>
+            <td>Comisión <span id="com-rep"></span>%</td>
+            <td>USD <span id="subtot-com"></span></td>
+          </tr>
+          <tr>
+            <td>Liquido a cobrar</td>
+            <td id="lin-tot">USD <span id="tot-rep"></span></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!-- Firma independiente, fuera del footer -->
+      <p id="p-firma">Firma: <span id="lin-firma"></span></p>
+
+      <div id="footer">
+        <p id="footer-bar"></p>
+        <p>DI.CO.SE 030303030 R.U.T. 030303030303</p>
+        <p>18 DE JULIO 2121</p>
+        <p>E-mail: example@example.com.uy – MONTEVIDEO – URUGUAY</p>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="js/prevReporte.js"></script>
+</html>
